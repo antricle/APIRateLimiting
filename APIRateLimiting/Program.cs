@@ -5,8 +5,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRateLimiter(_ => _
     .AddFixedWindowLimiter(policyName: "fixed", options =>
     {
-        options.PermitLimit = 4;
-        options.Window = TimeSpan.FromSeconds(12);
+        options.PermitLimit = 5;
+        options.Window = TimeSpan.FromSeconds(10);
     }));
 
 var app = builder.Build();
